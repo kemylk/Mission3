@@ -1,0 +1,52 @@
+﻿<Window x:Class="GsbRapports.ajouterVisiteur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        Title="ajouterVisiteur" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="0,50,0,0" >
+            <StackPanel Orientation="Horizontal" Margin="30,0,0,0">
+                <TextBlock Text="Id" Width="30"/>
+                <TextBox x:Name="txtId" Margin="50,0,0,0" Width="50"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Nom" Margin="30,0,0,0"/>
+                <TextBox x:Name="txtNom" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Prenom" Margin="30,0,0,0"/>
+                <TextBox x:Name="txtPrenom" Margin="50,0,0,0" Width="60"/>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ville" Margin="30,0,0,0"/>
+                <TextBox x:Name="txtVille" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Adresse" Margin="30,0,0,0"/>
+                <TextBox x:Name="txtAdresse" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="CP" Margin="30,0,0,0"/>
+                <TextBox x:Name="txtCP" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="dateEmbauche" Margin="30,0,0,0"/>
+                <DatePicker x:Name="dateEmbauche" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+
+            <Button x:Name="btnValider" Click="button_Click" Content="Ajouter" Width="50" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
+

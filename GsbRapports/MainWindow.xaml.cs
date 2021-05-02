@@ -109,12 +109,15 @@ namespace GsbRapports
 
         private void visiteurModifier_Click(object sender,RoutedEventArgs e)
         {
+            majVisiteurWindow w = new majVisiteurWindow(this.wb, this.laSecretaire, this.site);
+            w.Show();
 
         }
 
         private void visiteurAjouter_click(object sender,RoutedEventArgs e)
         {
-
+            ajouterVisiteur w = new ajouterVisiteur(this.wb,this.laSecretaire,this.site);
+            w.Show();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e) 

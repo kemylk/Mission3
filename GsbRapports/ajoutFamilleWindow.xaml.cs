@@ -23,5 +23,6 @@ namespace GsbRapports
         {
             InitializeComponent();
         }
+
     }
 }
