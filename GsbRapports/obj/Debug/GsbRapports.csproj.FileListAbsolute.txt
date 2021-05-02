@@ -50,3 +50,5 @@ C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\Gsb
 C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\GsbRapports.csproj.CopyComplete
 C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\GsbRapports.exe
 C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\GsbRapports.pdb
+C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\voirVisiteurWindow.g.cs
+C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\voirVisiteurWindow.baml

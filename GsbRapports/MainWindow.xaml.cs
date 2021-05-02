@@ -102,6 +102,8 @@ namespace GsbRapports
 
         private void visiteurVoir_Click(object sender, RoutedEventArgs e)
         {
+            voirVisiteurWindow w = new voirVisiteurWindow(this.wb, this.laSecretaire, this.site);
+            w.Show();
 
         }
 
