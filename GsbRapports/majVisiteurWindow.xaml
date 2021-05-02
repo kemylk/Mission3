@@ -10,10 +10,17 @@
         <StackPanel Margin="0,50,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <TextBlock Text="Les Visiteurs" Margin="50,0,0,0"/>
-                <ComboBox x:Name="cmbVisiteurs" Margin="30,0,0,0" Width="100"></ComboBox>
+                <ComboBox x:Name="cmbVisiteurs" Margin="30,0,0,0" SelectionChanged="clickCombo"  Width="100"></ComboBox>
 
             </StackPanel>
-            <TextBox x:Name="txtLibVisiteur" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtId" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtNom" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtPrenom" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtVille" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtAdresse" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtCp" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+
+
             <Button x:Name="btnValider" Content="Valider" Margin="0,100,0,0" Width="100"/>
 
 

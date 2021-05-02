@@ -36,6 +36,35 @@ namespace GsbRapports
 
 
 
+
+
+        public void clickCombo(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(this.cmbVisiteurs.SelectedItem.ToString());
+
+
+
+            string url = this.site + "visiteur?ticket=" + this.laSecretaire.getHashTicketMdp()+ "&idVisiteur="+this.cmbVisiteurs.SelectedItem.ToString();
+
+            string reponse = this.wb.DownloadString(url);
+            dynamic d = JsonConvert.DeserializeObject(reponse);
+            string visiteurs = d.visiteur.ToString();
+
+            string ticket = d.ticket;
+            Visiteur f = JsonConvert.DeserializeObject<Visiteur>(visiteurs);
+            this.laSecretaire.ticket = ticket; //important
+
+            this.txtAdresse.Text = f.adresse;
+            this.txtCp.Text = f.cp;
+            this.txtId.Text= f.id;
+            this.txtNom.Text = f.nom;
+            this.txtPrenom.Text = f.prenom;
+            this.txtVille.Text = f.ville;
+
+            //  ???
+            //var dataItem = cbItem.DataContext;
+        }
+
         public majVisiteurWindow(WebClient wb, Secretaire s, string site)
         {
             InitializeComponent();
