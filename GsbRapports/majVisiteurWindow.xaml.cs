@@ -47,7 +47,7 @@ namespace GsbRapports
             Console.WriteLine("ville = "+this.txtVille.Text);
 
 
-            string url = this.site + "visiteurs";
+            string url = this.site + "visiteur";
 
 
             /*this.site + "visiteur?ticket=" + this.laSecretaire.getHashTicketMdp()
@@ -70,8 +70,10 @@ namespace GsbRapports
 
                 byte[] tabByte = this.wb.UploadValues(url, "POST", parametres);
                 string reponse = UnicodeEncoding.UTF8.GetString(tabByte);
+                Console.WriteLine("reponse serveur " + reponse);
                 string ticket = reponse.Substring(2, reponse.Length - 2);
                 this.laSecretaire.ticket = ticket;
+                //this.Close();
             }
             catch (WebException ex)
             {
