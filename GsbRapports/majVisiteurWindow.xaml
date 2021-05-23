@@ -13,16 +13,23 @@
                 <ComboBox x:Name="cmbVisiteurs" Margin="30,0,0,0" SelectionChanged="clickCombo"  Width="100"></ComboBox>
 
             </StackPanel>
-            <TextBox x:Name="txtId" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtNom" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtPrenom" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtVille" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtAdresse" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtCp" Margin="100,50,0,0" Width="100" HorizontalAlignment="Center"/>
+            <StackPanel>
+                <Label   Content="id"/>
+                <TextBox x:Name="txtId" Width="100" HorizontalAlignment="Center"/>
+                <Label Content="nom"/>
+                <TextBox x:Name="txtNom" Width="100" HorizontalAlignment="Center"/>
+                <Label Content="prenom"/>
+                <TextBox x:Name="txtPrenom" Width="100" HorizontalAlignment="Center"/>
+                <Label Content="ville"/>
+                <TextBox x:Name="txtVille"  Width="100" HorizontalAlignment="Center"/>
+                <Label Content="adresse"/>
+                <TextBox x:Name="txtAdresse"  Width="100" HorizontalAlignment="Center"/>
+                <Label Content="cp"/>
+                <TextBox x:Name="txtCp"  Width="100" HorizontalAlignment="Center"/>
 
 
-            <Button x:Name="btnValider" Content="Valider" Margin="0,100,0,0" Width="100"/>
-
+                <Button Click="modifier" x:Name="btnValider" Content="Valider" Margin="0,100,0,0" Width="100"/>
+            </StackPanel>
 
         </StackPanel>
     </Grid>

@@ -15,7 +15,8 @@ using dllRapportVisites;
 using System.Net;
 using System.Dynamic;
 using Newtonsoft.Json;
-
+using System.Collections.Specialized;
+using System.Globalization;
 
 namespace GsbRapports
 {
@@ -46,23 +47,47 @@ namespace GsbRapports
             string cp = this.txtCP.Text;
             DateTime dateEmbauche = this.dateEmbauche.SelectedDate.Value;
             Visiteur visiteur = new Visiteur(id, nom, prenom, ville, adresse, cp, dateEmbauche);
-            string url = this.site + "visiteurs?ticket=" + this.laSecretaire.getHashTicketMdp()
-                + "&idVisiteur=" + id + "&nom=" + nom + "&prenom=" + prenom + "&ville=" + ville + "&adresse=" + adresse
-                + "&cp=" + cp+"&dateEmbauche=" + dateEmbauche.ToString();
+           
 
-            Console.WriteLine("url =" + url);
+
+
+            /*this.site + "visiteur?ticket=" + this.laSecretaire.getHashTicketMdp()
+            + "&idVisiteur=" + this.txtId + "&nom=" + this.txtNom + "&prenom=" +
+            this.txtPrenom + "&ville=" + this.txtVille + "&adresse=" + this.txtAdresse
+            + this.txtCp ;
+            */
+
+
+            string url = this.site + "visiteurs";
             try
             {
-                string retour = this.wb.UploadString(url, "");
-                Console.WriteLine("retour " + retour);
 
-            }catch(System.Net.WebException)
+                DateTime DtEmbauche = DateTime.ParseExact(this.dateEmbauche.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string realDateEmbauche = DtEmbauche.ToString("yyyy-MM-dd");
+
+                NameValueCollection parametres = new NameValueCollection();
+                parametres.Add("ticket", this.laSecretaire.getHashTicketMdp());
+                parametres.Add("idVisiteur", this.txtId.Text);
+                parametres.Add("nom", this.txtNom.Text);
+                parametres.Add("prenom", this.txtPrenom.Text);
+                parametres.Add("ville", this.txtVille.Text);
+                parametres.Add("adresse", this.txtAdresse.Text);
+                parametres.Add("cp", this.txtCP.Text);
+                parametres.Add("dateEmbauche", realDateEmbauche) ;
+
+                byte[] tabByte = this.wb.UploadValues(url, "POST", parametres);
+                string reponse = UnicodeEncoding.UTF8.GetString(tabByte);
+                string ticket = reponse.Substring(2, reponse.Length - 2);
+                this.laSecretaire.ticket = ticket;
+            }
+            catch (WebException ex)
             {
-                Console.WriteLine("erreur serveur ");
+                if (ex.Response is HttpWebResponse)
+                    MessageBox.Show(((HttpWebResponse)ex.Response).StatusCode.ToString());
+                //MessageBox.Show("Tous les champs doivent être valides");
 
             }
 
-
-        }
+        }   
     }
 }

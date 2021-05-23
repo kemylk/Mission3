@@ -16,6 +16,7 @@ using dllRapportVisites;
 using System.Net;
 using System.Dynamic;
 using Newtonsoft.Json;
+using System.Collections.Specialized;
 
 
 namespace GsbRapports
@@ -36,7 +37,72 @@ namespace GsbRapports
 
 
 
+        public void modifier(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("adresse ="+this.txtAdresse.Text);
+            Console.WriteLine("cp ="+this.txtCp.Text);
+            Console.WriteLine("id ="+this.txtId.Text);
+            Console.WriteLine("nom ="+this.txtNom.Text);
+            Console.WriteLine("prenom ="+this.txtPrenom.Text);
+            Console.WriteLine("ville = "+this.txtVille.Text);
 
+
+            string url = this.site + "visiteurs";
+
+
+            /*this.site + "visiteur?ticket=" + this.laSecretaire.getHashTicketMdp()
+            + "&idVisiteur=" + this.txtId + "&nom=" + this.txtNom + "&prenom=" +
+            this.txtPrenom + "&ville=" + this.txtVille + "&adresse=" + this.txtAdresse
+            + this.txtCp ;
+            */
+
+            try
+            {
+
+                NameValueCollection parametres = new NameValueCollection();
+                parametres.Add("ticket", this.laSecretaire.getHashTicketMdp());
+                parametres.Add("idVisiteur", this.txtId.Text);
+                parametres.Add("ville", this.txtVille.Text);
+                parametres.Add("adresse", this.txtAdresse.Text);
+                parametres.Add("cp", this.txtCp.Text);
+              
+               // parametres.Add("dateEmbauche",this.)
+
+                byte[] tabByte = this.wb.UploadValues(url, "POST", parametres);
+                string reponse = UnicodeEncoding.UTF8.GetString(tabByte);
+                string ticket = reponse.Substring(2, reponse.Length - 2);
+                this.laSecretaire.ticket = ticket;
+            }
+            catch (WebException ex)
+            {
+                if (ex.Response is HttpWebResponse)
+                    MessageBox.Show(((HttpWebResponse)ex.Response).StatusCode.ToString());
+                //MessageBox.Show("Tous les champs doivent être valides");
+
+            }
+
+            /* try
+             {
+                 string retour = this.wb.UploadString(url, "");
+                 Console.WriteLine("retour " + retour);
+
+             }
+             catch (System.Net.WebException)
+             {
+                 Console.WriteLine("erreur serveur ");
+
+             }*/
+
+
+            /* 
+             * this.txtAdresse.Text = f.adresse;
+        this.txtCp.Text = f.cp;
+        this.txtId.Text= f.id;
+        this.txtNom.Text = f.nom;
+        this.txtPrenom.Text = f.prenom;
+        this.txtVille.Text = f.ville;
+             */
+        }
 
         public void clickCombo(object sender, RoutedEventArgs e)
         {
@@ -58,6 +124,9 @@ namespace GsbRapports
             this.txtCp.Text = f.cp;
             this.txtId.Text= f.id;
             this.txtNom.Text = f.nom;
+            this.txtNom.IsEnabled = false;
+            this.txtPrenom.IsEnabled = false;
+            this.txtId.IsEnabled = false;
             this.txtPrenom.Text = f.prenom;
             this.txtVille.Text = f.ville;
 
