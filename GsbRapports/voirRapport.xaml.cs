@@ -17,6 +17,9 @@ using System.Dynamic;
 using Newtonsoft.Json;
 using System.Collections.Specialized;
 using System.Globalization;
+using System.IO;
+using System.Xml.Serialization;
+
 namespace GsbRapports
 {
     /// <summary>
@@ -27,6 +30,7 @@ namespace GsbRapports
         private WebClient wb;
         private Secretaire laSecretaire;
         private string site;
+        private List<Rapport> listeRapport;
 
         private void recupererRapport(object sender, RoutedEventArgs e)
         {
@@ -51,11 +55,46 @@ namespace GsbRapports
             this.laSecretaire.ticket = ticket; //important
             this.dtGrid.ItemsSource = f;
 
+            this.listeRapport = f;
+
+
+            /*
+            listeRapport r = new listeRapport();
+            r.lesRapports = f;
+
+            FileStream fichierXml = new FileStream("rapportsMedecin2.xml", FileMode.Create);
+            XmlSerializer x = new XmlSerializer(r.GetType());
+            x.Serialize(fichierXml, r);
+            MessageBox.Show("Exportation effectuée avec succès");
+            */
+
 
 
 
         }
-            public voirRapport(WebClient wb, Secretaire s, string site)
+
+
+        private void genererXML(object sender, RoutedEventArgs e)
+        {
+
+            listeRapport r = new listeRapport();
+            r.lesRapports = this.listeRapport;
+
+            FileStream f = new FileStream("rapportsMedecin2.xml", FileMode.Create);
+            XmlSerializer x = new XmlSerializer(r.GetType());
+            x.Serialize(f, r);
+            MessageBox.Show("Exportation effectuée avec succès");
+
+
+
+        }
+
+
+
+
+
+
+        public voirRapport(WebClient wb, Secretaire s, string site)
 
         {
 

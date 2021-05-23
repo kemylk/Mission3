@@ -21,6 +21,7 @@
 
             </StackPanel>
             <Button x:Name="btnValider" Click="recupererRapport" Content="Ajouter" Width="50" HorizontalAlignment="Center"/>
+            <Button x:Name="xml" Click="genererXML" Content="genererXML" Width="80" HorizontalAlignment="Center"/>
 
 
         </StackPanel>
@@ -28,6 +29,8 @@
 
             <DataGrid x:Name="dtGrid"></DataGrid>
 
+
         </Grid>
+       
     </StackPanel>
 </Window>
