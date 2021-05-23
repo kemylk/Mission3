@@ -120,6 +120,16 @@ namespace GsbRapports
             w.Show();
         }
 
+        private void voirRapport_click(object sender, RoutedEventArgs e)
+        {
+            // ajouterVisiteur w = new ajouterVisiteur(this.wb, this.laSecretaire, this.site);
+            // w.Show();
+            voirRapport w = new voirRapport(this.wb, this.laSecretaire, this.site);
+            w.Show();
+        }
+
+
+
         private void MenuItem_Click(object sender, RoutedEventArgs e) 
         { 
             VoirFamillesWindow w = new VoirFamillesWindow(this.wb, this.laSecretaire, this.site); 

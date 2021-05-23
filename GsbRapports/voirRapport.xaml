@@ -1,0 +1,33 @@
+﻿<Window x:Class="GsbRapports.voirRapport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        Title="voirRapport" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock Text="Les Visiteurs" Margin="50,0,0,0"/>
+            <ComboBox  SelectedIndex="0"  x:Name="cmbVisiteurs" Margin="30,0,0,0"   Width="100"></ComboBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="dateA" Margin="30,0,0,0"/>
+                <DatePicker  x:Name="dateA" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="dateB" Margin="30,0,0,0"/>
+                <DatePicker  x:Name="dateB" Margin="50,0,0,0" Width="60"/>
+
+            </StackPanel>
+            <Button x:Name="btnValider" Click="recupererRapport" Content="Ajouter" Width="50" HorizontalAlignment="Center"/>
+
+
+        </StackPanel>
+        <Grid>
+
+            <DataGrid x:Name="dtGrid"></DataGrid>
+
+        </Grid>
+    </StackPanel>
+</Window>

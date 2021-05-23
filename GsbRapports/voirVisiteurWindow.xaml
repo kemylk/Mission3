@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:GsbRapports"
         mc:Ignorable="d"
         Title="Voir les Visiteurs" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="dtGrid" ></DataGrid>
-    </Grid>
+    <StackPanel>
+        
+        <Grid>
+            <DataGrid x:Name="dtGrid" ></DataGrid>
+        </Grid>
+    </StackPanel>
 </Window>

@@ -25,6 +25,8 @@
                     <MenuItem Header="_Voir" Click="visiteurVoir_Click"/>
                     <MenuItem Header="_Modifier" Click="visiteurModifier_Click" />
                     <MenuItem Header="_Ajouter" Click="visiteurAjouter_click" />
+                    <MenuItem Header="_voirRapport" Click="voirRapport_click" />
+
                 </MenuItem>
                 <MenuItem Header="_Familles">
                     <MenuItem Header="_Voir" Click="MenuItem_Click"/>

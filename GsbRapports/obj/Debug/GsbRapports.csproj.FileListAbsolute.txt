@@ -56,3 +56,5 @@ C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\ajo
 C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\ajouterVisiteur.baml
 C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\majVisiteurWindow.g.cs
 C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\majVisiteurWindow.baml
+C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\voirRapport.g.cs
+C:\Users\louis\OneDrive\Bureau\C#\Mission3-GsbRapports\GsbRapports\obj\Debug\voirRapport.baml
